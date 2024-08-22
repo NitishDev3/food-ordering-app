@@ -1,0 +1,61 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    border: solid 1px;
+}
+
+.logo {
+    height: 80px;
+    width: 80px;
+}
+
+
+.nav-container {
+    padding: 0px 20px;
+}
+
+.nav-container > ul {
+    display: flex;
+    list-style-type: none;
+    font-size: 17px;
+}
+.nav-container > ul > li {
+    padding: 10px;
+}
+
+.res-card {
+    border: 1px solid #f0f0f0 ;
+    height: 300px;
+    width: 250px;
+    margin: 10px;
+    background-color: #f0f0f0;
+}
+
+.res-card > img {
+    height: 200px;
+    width: 240px;
+    padding: 5px 5px 0px;
+}
+
+.res-card > h3 {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0px 5px;
+}
+
+.res-card > h5, h6 {
+    display: flex;
+    justify-content: left;
+    margin: 5px 0px 5px 5px;
+}
+
+.res-card:hover {
+    border: 1.5px solid black;
+    cursor: pointer;
+}
+
+.res-constainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
