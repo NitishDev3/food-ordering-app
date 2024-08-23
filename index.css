@@ -1,7 +1,14 @@
+body {
+    background-color: darkseagreen;
+    margin: 0px;
+}
+
 .header {
     display: flex;
     justify-content: space-between;
     border: solid 1px;
+    background-color: black;
+    width: 100%;
 }
 
 .logo {
@@ -21,11 +28,12 @@
 }
 .nav-container > ul > li {
     padding: 10px;
+    color:#f0f0f0;
 }
 
 .res-card {
-    border: 1px solid #f0f0f0 ;
-    height: 300px;
+    border: 1.5px solid #f0f0f0 ;
+    height: auto;
     width: 250px;
     margin: 10px;
     background-color: #f0f0f0;
@@ -39,11 +47,10 @@
 
 .res-card > h3 {
     display: flex;
-    justify-content: center;
-    margin: 10px 0px 5px;
+    margin: 10px 0px 5px 5px;
 }
 
-.res-card > h5, h6 {
+.res-card > h6 {
     display: flex;
     justify-content: left;
     margin: 5px 0px 5px 5px;
