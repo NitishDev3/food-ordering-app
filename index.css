@@ -82,3 +82,19 @@ body {
 .filter-btn {
     margin: 10px;
 }
+.shimmer-card {
+    height: 300px;
+    width: 250px;
+    margin: 10px;
+    background-color: hsl(0, 9%, 85%);
+}
+.shimmer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.filter{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
