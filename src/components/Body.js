@@ -2,17 +2,13 @@ import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
+
 
 const Body = () => {
     const [resListRender, setResListRender] = useState([]);
-    let [filResListRen, setFilResListRen] = useState([])
+    let [filResListRen, setFilResListRen] = useState([]);
     const [searchText, setSearchText] = useState("");
-
-    const topRatedRes = () => {
-        let filteredList = resListRender.filter((res) => res.info.avgRating > 4.2);
-        setFilResListRen(filteredList);
-        // console.log("top");
-    }
 
     useEffect(() => {
         fetchData();
@@ -31,6 +27,16 @@ const Body = () => {
                 console.error(err);
         }
     }
+
+    const topRatedRes = () => {
+        let filteredList = resListRender.filter((res) => res.info.avgRating > 4.2);
+        setFilResListRen(filteredList);
+        // console.log("top");
+    }
+
+    const statusOnline = useOnlineStatus();
+
+    if(statusOnline === false) return <h1>You are offline!!! Please check your internet connection...</h1>
 
     return resListRender.length == 0 ? (
         <Shimmer />
@@ -72,7 +78,7 @@ const Body = () => {
             <div className="res-constainer">
                 {/* <RestaurantCard resData={resList[0]} /> */}
                 {filResListRen.map(res =>
-                    <Link to={`/menu/${res.info.id}`}><RestaurantCard key={res.info.id} resData={res} /></Link>
+                    <Link to={`/menu/${res.info.id}`} key={res.info.id}><RestaurantCard resData={res} /></Link>
                 )}
             </div>
         </div>)

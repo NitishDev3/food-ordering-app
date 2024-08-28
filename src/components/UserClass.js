@@ -23,8 +23,8 @@ class UserClass extends React.Component {
                 <h5>{this.props.location}</h5>      {/* normal access of props */}
                 <h5>nitish_3.ig</h5>
 
-                <h4>Count = {this.state.count}</h4> {/* normal access of State */}
-                <h4>Count = {count2}</h4>           {/* access of State by destructuring*/}
+                <h4>CountOne = {this.state.count}</h4> {/* normal access of State */}
+                <h4>CountTwo = {count2}</h4>           {/* access of State by destructuring*/}
 
                 <button
                 onClick={()=>{
