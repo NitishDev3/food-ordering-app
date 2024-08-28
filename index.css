@@ -12,8 +12,9 @@ body {
 }
 
 .logo {
-    height: 80px;
-    width: 80px;
+    height: 70px;
+    width: 100px;
+    margin: 3px 5px;
 }
 
 
@@ -37,6 +38,7 @@ body {
     width: 250px;
     margin: 10px;
     background-color: #f0f0f0;
+    border-radius: 7px;
 }
 
 .res-card > img {
@@ -80,7 +82,7 @@ body {
 }
 
 .filter-btn {
-    margin: 10px;
+    margin: 0px 10px;
 }
 .shimmer-card {
     height: 300px;
@@ -97,4 +99,29 @@ body {
     display: flex;
     justify-content: center;
     margin: 10px;
+}
+.search-btn {
+    margin: 0px 5px;
+}
+.login-btn{
+    width: 70px;
+    /* background-color: rgb(53, 164, 53);
+    background-color: rgb(220, 33, 33); */
+    color: white;
+    border-radius: 5;
+    cursor: pointer;
+}
+
+.res-page {
+    display: flex;
+    justify-content: center;
+}
+.res-menu > ul{
+    list-style: none;
+}
+
+.user-card {
+    padding: 10px;
+    border: 1px solid black;
+    margin: 5px;
 }

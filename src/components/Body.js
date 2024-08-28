@@ -1,6 +1,7 @@
 import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const Body = () => {
     const [resListRender, setResListRender] = useState([]);
@@ -30,11 +31,6 @@ const Body = () => {
                 console.error(err);
         }
     }
-
-    // if (searchText == "") {
-    //     filResListRen = resListRender;
-    // }
-
 
     return resListRender.length == 0 ? (
         <Shimmer />
@@ -67,11 +63,16 @@ const Body = () => {
                 >
                     Top Rated Restaurants
                 </button>
+                <button 
+                className="clear-filter-btn"
+                onClick={()=>(setFilResListRen(resListRender))}>
+                    Clear Filter
+                </button>
             </div>
             <div className="res-constainer">
                 {/* <RestaurantCard resData={resList[0]} /> */}
                 {filResListRen.map(res =>
-                    <RestaurantCard key={res.info.id} resData={res} />
+                    <Link to={`/menu/${res.info.id}`}><RestaurantCard key={res.info.id} resData={res} /></Link>
                 )}
             </div>
         </div>)
