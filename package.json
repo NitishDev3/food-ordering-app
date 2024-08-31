@@ -2,7 +2,7 @@
   "name": "namaste-react-foodapp",
   "version": "1.0.0",
   "description": "",
-  "main": "App.js",
+  "source": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel index.html",
