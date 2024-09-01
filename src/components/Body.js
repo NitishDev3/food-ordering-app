@@ -21,7 +21,7 @@ const Body = () => {
         try {
             const dataFromAPI = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
             const dataValue = await dataFromAPI.json();
-            console.log(dataValue.data.cards[1].card.card.gridElements.infoWithStyle.restaurants)
+            // console.log(dataValue.data.cards[1].card.card.gridElements.infoWithStyle.restaurants)
             setResListRender(dataValue?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
             setFilResListRen(dataValue?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         }
@@ -44,8 +44,8 @@ const Body = () => {
     return resListRender.length == 0 ? (
         <Shimmer />
     ) : (
-        <div className="bg-green-200" >
-            <div className="mx-10">
+        <div className="bg-green-200 flex flex-grow min-h-screen" >
+            <div className="mx-10 mt-20 mb-[30px] flex-grow ">
                 <div className="flex py-3 justify-center items-center">
                     <input
                         type="text"
@@ -81,7 +81,7 @@ const Body = () => {
                 <div className="flex flex-wrap justify-center">
                     {filResListRen.map(res =>
                         <Link to={`/menu/${res.info.id}`} key={res.info.id}>
-                            {(res.info.isOpen && res.info.avgRating > 4.2) ? <PromResCard resData={res} /> : <RestaurantCard resData={res} />}
+                            {(res?.info?.isOpen && res?.info?.avgRating > 4.2 && res?.info?.aggregatedDiscountInfoV3?.header !== undefined) ? <PromResCard resData={res} /> : <RestaurantCard resData={res} />}
                         </Link>
                     )}
                 </div>
